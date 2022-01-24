@@ -1,15 +1,15 @@
 var wms_layers = [];
 
 
-        var lyr_OpenStreetMapbase_0 = new ol.layer.Tile({
-            'title': 'Open Street Map base',
+        var lyr_ESRIGraylight_0 = new ol.layer.Tile({
+            'title': 'ESRI Gray (light)',
             'type': 'base',
-            'opacity': 0.335000,
+            'opacity': 1.000000,
             
             
             source: new ol.source.XYZ({
     attributions: ' ',
-                url: 'http://a.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png'
+                url: 'http://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}'
             })
         });
 var format_gradeonebuildings_1 = new ol.format.GeoJSON();
@@ -27,8 +27,8 @@ var lyr_gradeonebuildings_1 = new ol.layer.Vector({
                 title: '<img src="styles/legend/gradeonebuildings_1.png" /> grade one buildings'
             });
 
-lyr_OpenStreetMapbase_0.setVisible(true);lyr_gradeonebuildings_1.setVisible(true);
-var layersList = [lyr_OpenStreetMapbase_0,lyr_gradeonebuildings_1];
+lyr_ESRIGraylight_0.setVisible(true);lyr_gradeonebuildings_1.setVisible(true);
+var layersList = [lyr_ESRIGraylight_0,lyr_gradeonebuildings_1];
 lyr_gradeonebuildings_1.set('fieldAliases', {'Name': 'Name', 'Grade': 'Grade', 'Location': 'Location', 'BroadClass': 'BroadClass', 'Report': 'Report', });
 lyr_gradeonebuildings_1.set('fieldImages', {'Name': 'TextEdit', 'Grade': 'TextEdit', 'Location': 'TextEdit', 'BroadClass': 'TextEdit', 'Report': 'TextEdit', });
 lyr_gradeonebuildings_1.set('fieldLabels', {'Name': 'no label', 'Grade': 'no label', 'Location': 'no label', 'BroadClass': 'no label', 'Report': 'no label', });
